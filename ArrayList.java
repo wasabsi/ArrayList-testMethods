@@ -2,9 +2,6 @@ package edu.cofc.csci230;
 
 /**
  * ArrayList Data Structure
- * 
- * @author CSCI 230: Data Structures and Algorithms Fall 2017
- *
  * @param <AnyType>
  */
 public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyType> {
@@ -51,11 +48,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public void add(int index, AnyType t) throws IndexOutOfBoundsException {
          
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         */
+       
     	if(index >= 0 && index <= size){
     		//Checks if the index is in front of the list
     		if(size >= capacity){
@@ -91,11 +84,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public void set(int index, AnyType t) throws IndexOutOfBoundsException {
          
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         */
+      
     	if(index < 0 || index >= size){
     		throw new IndexOutOfBoundsException();
     	}
@@ -114,16 +103,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public AnyType remove( int index ) throws IndexOutOfBoundsException {
          
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         * Requirement - you must use loops (i.e. may not use
-         * System.arraycopy, or any other array copy operation 
-         * available in the Java API) to perform left or right
-         * shift operations
-         * 
-         */
+       
     	AnyType temp;
     	if(index >= 0 && index <= size-1){ //<= size
     		//Checks if the index is in front of the list
@@ -157,11 +137,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public AnyType get(int index) throws IndexOutOfBoundsException {
          
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         */
+      
     	if(index < 0 || index >= size){
     		throw new IndexOutOfBoundsException();
     	}
@@ -201,11 +177,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public void clear() {
          
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         */
+     
     	//set all previous indexes to null
     	for(int i=0; i<size;i++){
     		array[i]= null;
@@ -226,15 +198,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     private void grow() {
         
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         * Requirement - you must use loops (i.e. may not use
-         * System.arraycopy, or any other array copy operation 
-         * available in the Java API)
-         * 
-         */
+    
     	AnyType[] newArray = (AnyType[]) new Comparable [capacity * 2];
     	
     	//copies new old array to new array object
@@ -258,15 +222,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     private void shrink() {
         
-        /**
-         * -------------------------------------------
-         * TODO: You fully implement this method
-         * 
-         * Requirement - you must use loops (i.e. may not use
-         * System.arraycopy, or any other array copy operation 
-         * available in the Java API)
-         * 
-         */
+       
     	AnyType[] newArray = (AnyType[]) new Comparable [capacity / 2];
     	
     	for(int i=0; i<size; i++){
@@ -281,16 +237,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
     } // end shrink() method
     
     
-    /**
-     * For debugging purposes :)
-     * 
-     * Note: this only works for integer values 
-     * hence, the %d format specifier in the 
-     * string format method. If you want a 
-     * different specifier, like string %s, 
-     * you can change.
-     * 
-     */
+   //testing
     public String toString() {
         
         StringBuffer buffer = new StringBuffer();
@@ -321,11 +268,7 @@ public class ArrayList<AnyType extends Comparable<AnyType>> implements List<AnyT
      */
     public static void main( String[] args ) {
          
-        /**
-         * -------------------------------------------
-         * TODO: Put your test cases here
-         * 
-         */
+      
     	ArrayList<Integer> test = new ArrayList<Integer>();   
     	
     	//TEST ADD 
